@@ -47,9 +47,9 @@
 /** Exercise 3 **/
 
 // for (var i = 0; i < 10; i++) {
-// 
+//
 //     let randomNumber = Math.floor(Math.random() * 200) + 20;
-// 
+//
 //     if (randomNumber % 2 === 0) {
 //         console.log(randomNumber + " is even");
 //     } else {
@@ -59,9 +59,9 @@
 
 /** Exercise 4 **/
 
-// for (var x = 1,  y = 1; x < 10; x++, y++) {
+// for (var x = 1; x < 10; x++) {
 //     let output = x.toString();
-//     console.log(output.repeat(y));
+//     console.log(output.repeat(x));
 // }
 
 /** Exercise 5 **/
