@@ -47,7 +47,14 @@
 /** Exercise 3 **/
 
 // for (var i = 0; i < 10; i++) {
-//     console.log(i + Math.floor(Math.random() * 200) + 20);
+// 
+//     let randomNumber = Math.floor(Math.random() * 200) + 20;
+// 
+//     if (randomNumber % 2 === 0) {
+//         console.log(randomNumber + " is even");
+//     } else {
+//         console.log(randomNumber + " is odd");
+//     }
 // }
 
 /** Exercise 4 **/
