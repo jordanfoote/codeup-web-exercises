@@ -1,9 +1,12 @@
+h1 {
+    text-align: center;
+}
 
-
-
-
-
-.fancy-header {
-    color: purple;
+h1, h2 {
+    color: #007069;
     text-decoration: underline;
+}
+
+body {
+    background-image: url('img/cool-background.png');
 }
