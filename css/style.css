@@ -8,6 +8,38 @@ h1, h2 {
 }
 
 body {
-    background-image: url("../img/cool-background.png");
     background-size: cover;
+    background-image: url("../img/cool-background.png");
+    font-family: "Andale Mono";
+}
+
+ol, ul {
+    list-style: square;
+}
+
+table {
+    margin: 0 auto;
+}
+
+tr {
+    padding: 10 px;
+}
+
+td {
+    padding: 5px;
+}
+
+a:link {
+    color: blue;
+}
+a:visited {
+    color: #8a4182;
+}
+
+a:hover {
+    color: #007069;
+}
+
+a:active {
+    color: greenyellow;
 }
