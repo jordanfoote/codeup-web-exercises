@@ -49,7 +49,8 @@ a {
     background: var(--light-bg);
     display: flex;
     align-items: center;
-    margin-right: auto;
+    justify-content: space-between;
+    height: 80px;
 }
 .btn {
     border: 1px solid var(--main-link-color);
@@ -72,4 +73,54 @@ a {
 }
 .text-muted {
     color: var(--main-link-color);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-right: .5em;
+    margin-left: .5em;
+    padding-top: 2em;
+}
+
+.profile-details {
+    flex-grow: 1;
+    margin-right: 2em;
+}
+
+.profile-items {
+    list-style: none;
+    padding: 0px;
+}
+
+.profile-entry {
+    margin: .5em;
+}
+
+.timeline {
+    flex-grow: 2;
+}
+
+.who-to-follow {
+    flex-grow: 1;
+    margin-left: 2em;
+}
+
+.media {
+    width: 100%;
+    background: var(--light-bg);
+    border-bottom: 1px var(--separator-color);
+    padding: .5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.media-image {
+    max-width: 50px;
+    max-height: 50px;
+    margin-top: 1.33em;
+}
+
+.media-body {
+    width: calc(100% - 50px);
 }
