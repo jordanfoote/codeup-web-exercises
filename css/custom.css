@@ -1,3 +1,13 @@
 .jumbotron {
+    background-image: url("css/img/pizza.png");
+    background-size: cover;
 
+}
+
+.list-group {
+    width: 100%;
+}
+
+.btn-primary {
+    text-align: right;
 }
