@@ -9,11 +9,57 @@
 
     <body>
 
+        <h1 id="header">JQuery Exercises</h1>
+
+        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid aperiam assumenda aut,
+            consequatur culpa doloremque eaque earum est eum eveniet ex fugiat fugit incidunt ipsam iste iure libero
+            maxime mollitia optio quae quaerat quia quod quos recusandae rem reprehenderit sapiente suscipit tempora
+            temporibus tenetur velit voluptas voluptates. Architecto, cum cumque dolorem eius eum explicabo fugit ipsa
+            ipsum iusto minus nam nesciunt nisi nobis nulla quas quis quos suscipit tenetur veniam voluptatibus. Ad
+            consequuntur dignissimos dolorum earum eligendi laboriosam magni, molestias, nemo nihil officiis
+            perspiciatis quibusdam quis quo quos saepe sequi, voluptatibus! Aperiam distinctio doloremque esse iste
+            laboriosam possimus vitae.
+        </p>
+
+        <ul id="list">
+            <li class="list-item">1</li>
+            <li class="list-item">2</li>
+            <li class="list-item">3</li>
+            <li class="list-item">4</li>
+            <li class="list-item">5</li>
+        </ul>
+
+        <div class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut consequatur cumque
+            dignissimos ducimus et, exercitationem explicabo impedit incidunt iste modi nemo perspiciatis placeat porro
+            praesentium quia reiciendis ut vitae?
+        </div>
+        <br>
+        <div class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam autem, cumque
+            dolorum error ipsa iste magnam minima minus molestias nesciunt nostrum obcaecati porro praesentium provident
+            quidem quos reiciendis velit.
+        </div>
+        <br>
+        <div class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto ipsam maxime
+            nesciunt rem similique suscipit totam veniam voluptas voluptate. A aut beatae cumque delectus eius expedita
+            mollitia provident vitae.
+        </div>
+
         <script>
 
             $(document).ready(function ( ) {
 
                 // alert('DOM has finished loading');
+
+                let mainHeader = $('#header');
+                alert(mainHeader.html());
+
+                $('.codeup').css('border', 'solid red 1px');
+
+                $('.list-item').css('font-size', '20px');
+
+                $('h1, p, li').css('background-color', 'yellow');
+                // $('p').css('background-color', 'yellow');
+                // $('li').css('background-color', 'yellow');
 
             });
         </script>
