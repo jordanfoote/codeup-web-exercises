@@ -50,18 +50,36 @@
 
                 // alert('DOM has finished loading');
 
-                let mainHeader = $('#header');
-                alert(mainHeader.html());
+                // let mainHeader = $('#header');
+                // alert(mainHeader.html());
 
-                $('.codeup').css('border', 'solid red 1px');
+                // $('.codeup').css('border', 'solid red 1px');
 
-                $('.list-item').css('font-size', '20px');
+                // $('.list-item').css('font-size', '20px');
 
-                $('h1, p, li').css('background-color', 'yellow');
+                // $('h1, p, li').css('background-color', 'yellow');
                 // $('p').css('background-color', 'yellow');
                 // $('li').css('background-color', 'yellow');
 
             });
+
+            $('#header').click(function () {
+                $(this).css('background-color', 'yellow');
+            });
+
+            $('.paragraph').dblclick(function () {
+                $(this).css('font-size', '18px');
+            });
+
+            $('.list-item').hover(
+                function() {
+                    $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', 'black');
+                }
+            );
+
         </script>
 
     </body>
