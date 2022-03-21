@@ -4,6 +4,30 @@
     <head>
         <meta charset="UTF-8">
         <title>Ajax Blog</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: navajowhite;
+            }
+
+            div {
+                text-align: center;
+                margin: 10px 100px;
+            }
+
+            .sub-section {
+                background-color: beige;
+                padding: 20px;
+                margin: 50px;
+                border-radius: 10px;
+            }
+
+            p {
+                font-size: 1.5em;
+            }
+        </style>
     </head>
 
     <body>
@@ -11,6 +35,8 @@
         <div id="posts">
 
         </div>
+
+        <script src="js/jquery-2.2.4.js"></script>
 
         <script>
 
@@ -26,7 +52,7 @@
                      for (var x = 0; x < data.length; x++) {
                          console.log(data[x]);
                          console.log(data[x].title);
-                         generatedHTML = "<div><h3>" + data[x].title + "</h3>" +
+                         generatedHTML = "<div class='sub-section'><h1>" + data[x].title + "</h1>" +
                              "<p>" + data[x].content + "</p>" +
                              "<p>" + "Categories: " + data[x].categories + "</p></div>";
 
