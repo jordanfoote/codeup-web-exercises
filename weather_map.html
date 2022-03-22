@@ -53,7 +53,7 @@
             "use strict";
             (function () {
 
-                var url = "https://api.openweathermap.org/data/2.5/forecast";
+                let url = "https://api.openweathermap.org/data/2.5/forecast";
 
                 weatherData();
 
@@ -69,8 +69,9 @@
                         console.log(data);
                         $("#current-city").text(data.city.name);
 
-                        for (var x = 0; x < data.list.length; x++) {
+                        clearData();
 
+                        for (var x = 0; x < data.list.length; x++) {
                             if (x === 7 || x === 15 || x === 23 || x === 31 || x === 39) {
                                 var html = " ";
                                 var date = data.list[x].dt_txt;
@@ -83,8 +84,8 @@
                                 html += "<div class=\"info\">"
                                 html += "<li class=\"card-header\" id=\"day\">" + splitDate[0] + "</li>"
                                 html += "<div class= \"date\">"
-                                html += "<li class=\"list-group-item\" id=\"descript\">" + data.list[x].weather[0].description.toUpperCase() + "</li>"
-                                html += "<li class=\"list-group-item\" id=\"humid\">" + "Humidity: " + data.list[x].main.humidity + "%" + "</li>"
+                                html += "<li class=\"list-group-item\" id=\"description\">" + data.list[x].weather[0].description.toUpperCase() + "</li>"
+                                html += "<li class=\"list-group-item\" id=\"humidity\">" + "Humidity: " + data.list[x].main.humidity + "%" + "</li>"
                                 html += "<li class=\"list-group-item\" id=\"wind\">" + "Wind: " + data.list[x].wind.speed + "mph" + "</li>"
                                 html += "</div>"
                                 html += "</div>"
@@ -94,7 +95,7 @@
                                 $(".weather").append(html);
                             }
                         }
-
+//
                         let longitude = data.city.coord.lon;
                         let latitude = data.city.coord.lat;
 
@@ -116,6 +117,10 @@
                         e.preventDefault();
                         weatherData();
                     });
+
+                    function clearData() {
+                        $('.weather').html(" ");
+                    }
                 }
             })();
 
