@@ -1,10 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather Map</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet'/>
+        <script src="js/jquery-2.2.4.js"></script>
+        <link rel="stylesheet" href="css/weather_map.css">
+
+    </head>
+
+    <body>
+        <div class="container">
+            <nav class="nav">
+                <img src="img/weather-logo.png" alt="weather-logo" class="weather-logo">
+                <div>
+                <h1>Weather App</h1>
+                <p id="current-city"></p>
+                </div>
+            </nav>
+
+            <hr>
+
+            <div class="search">
+                <form class="form">
+                    <div class="search-bar">
+                        <input type="text" id="input" value="Norman" placeholder="Enter City">
+                    </div>
+                    <br>
+                    <button type="submit" id="search-button">Search</button>
+                </form>
+            </div>
+
+            <hr>
+
+            <h1 class="desktop">Forecast for the next five days</h1>
+            <div class="forecast">
+                <div class="weather">
+
+                </div>
+            </div>
+
+            <hr>
+
+            <div id="map"></div>
+
+            <script src="js/mapbox-geocoder-utils.js"></script>
+            <script src="js/keys.js"></script>
+
+        <script>
+            "use strict";
+            (function () {
+
+                var url = "https://api.openweathermap.org/data/2.5/forecast";
+
+                weatherData();
+
+                function weatherData() {
+                    $('.weather').html(" ");
+                    let input = $('#input');
+
+                    $.get(url, {
+                        "APPID": OWM_KEY,
+                        "q": input.val(),
+                        "units": "imperial"
+                    }).done(function (data) {
+                        console.log(data);
+                        $("#current-city").text(data.city.name);
+
+                        for (var x = 0; x < data.list.length; x++) {
+
+                            if (x === 7 || x === 15 || x === 23 || x === 31 || x === 39) {
+                                var html = " ";
+                                var date = data.list[x].dt_txt;
+                                var splitDate = date.split(" ");
+                                var roundedTemp = Math.round(data.list[x].main.temp);
+
+                                html += "<div class=\"card\">"
+                                html += "<ul class=\"list-group\">"
+                                html += "<li class=\"list-group-item\" id=\"temp\">" + roundedTemp + "°" + "</li>"
+                                html += "<div class=\"info\">"
+                                html += "<li class=\"card-header\" id=\"day\">" + splitDate[0] + "</li>"
+                                html += "<div class= \"date\">"
+                                html += "<li class=\"list-group-item\" id=\"descript\">" + data.list[x].weather[0].description.toUpperCase() + "</li>"
+                                html += "<li class=\"list-group-item\" id=\"humid\">" + "Humidity: " + data.list[x].main.humidity + "%" + "</li>"
+                                html += "<li class=\"list-group-item\" id=\"wind\">" + "Wind: " + data.list[x].wind.speed + "mph" + "</li>"
+                                html += "</div>"
+                                html += "</div>"
+                                html += "</ul>"
+                                html += "</div>"
+
+                                $(".weather").append(html);
+                            }
+                        }
+
+                        let longitude = data.city.coord.lon;
+                        let latitude = data.city.coord.lat;
+
+                        mapboxgl.accessToken = MAP_KEY;
+                        let map = new mapboxgl.Map({
+                            container: 'map',
+                            style: 'mapbox://styles/mapbox/streets-v9',
+                            zoom: 10,
+                            center: [longitude, latitude]
+                        });
+
+                        let marker = new mapboxgl.Marker({
+                            draggable: true
+                        })
+                            .setLngLat([longitude, latitude])
+                            .addTo(map)});
+
+                    $("#search-button").click(function(e) {
+                        e.preventDefault();
+                        weatherData();
+                    });
+                }
+            })();
+
+        </script>
+        </div>
+    </body>
 </html>

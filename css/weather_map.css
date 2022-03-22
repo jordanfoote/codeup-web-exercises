@@ -1,0 +1,181 @@
+body {
+    background: linear-gradient(lightskyblue, yellow);
+}
+
+hr {
+    box-shadow: 4px 2px 2px #383838;
+}
+
+.weather-logo {
+    display: none;
+}
+
+.container {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    align-content: center;
+    padding: 10px;
+}
+.nav {
+    text-align: center;
+    color: navy;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+#current-city {
+    color: grey;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search {
+    margin: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+#input {
+    width: 100%;
+}
+
+#search-button {
+
+}
+
+.weather {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    background: linear-gradient(lightskyblue, royalblue);
+    box-shadow: 10px 5px 5px #383838;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px
+}
+
+.card-header {
+    color: white;
+}
+
+.list-group {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.desktop {
+    display: none;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: whitesmoke;
+    width: 175px;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 10px 5px 5px #383838;
+}
+
+.list-group-item {
+    color: dimgray;
+}
+
+#temp {
+    font-size: 3em;
+    color: white;
+}
+
+#map.mapboxgl-map {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+    outline: 2px solid dimgray;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 576px){
+
+    body {
+        margin: 30px;
+        align-content: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 1200px;
+        padding: 20px;
+        align-content: center;
+    }
+
+    .nav {
+        display: flex;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: navy;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
+    #current-city {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        font-size: 2em;
+        margin: 0;
+    }
+
+    .list-group-item {
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .weather {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        width: auto;
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    .weather-logo {
+        width: 150px;
+        display: flex;
+        height: 150px;
+        margin-right: 20px;
+        border-radius: 50%;
+        box-shadow: 10px 5px 5px #383838;
+        margin-bottom: 10px;
+    }
+
+    .date {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: whitesmoke;
+        width: 175px;
+        margin-right: 20px;
+        border-radius: 5px;
+        box-shadow: 10px 5px 5px #383838;
+    }
+}
+
