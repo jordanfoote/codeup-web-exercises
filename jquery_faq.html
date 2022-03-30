@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>JQuery FAQ</title>
         <style>
 
             .invisible {
@@ -12,6 +12,14 @@
 
             .highlighted {
                 background-color: yellow;
+            }
+
+            .bolded {
+                font-weight: bold;
+            }
+
+            .blue {
+                color: blue;
             }
 
         </style>
@@ -23,6 +31,7 @@
         <br>
 
         <button id="button">Display Answers</button>
+        <button id="button-two">Highlight Last Facts</button>
 
         <br>
 
@@ -78,6 +87,38 @@
             facilities.
         </dd>
 
+        <hr>
+
+        <div>
+            <h3>Trail of Tears</h3>
+            <ul>
+                <li>The Trail of Tears goes through nine different states. Alabama, Arkansas, Georgia, Illinois, Kentucky, Missouri, North Carolina, Oklahoma, and Tennessee.</li>
+                <li>The Trail of Tears was when the United States government forced Native Americans to move from their homelands in the Southern United States to Indian Territory in Oklahoma. Peoples from the Cherokee, Muscogee, Chickasaw, Choctaw, and Seminole tribes were marched at gunpoint across hundreds of miles to reservations.</li>
+                <li>The Indian Removal Act was passed by Congress in 1830.</li>
+                <li>It began with the removal of the Choctaw in 1831 and ended with the removal of the Cherokee in 1838.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Oklahoma City Memorial</h3>
+            <ul>
+                <li>This was a terrorist attack in Oklahoma City, OK on April 19, 1995.</li>
+                <li>A massive homemade bomb exploded in a truck on the premises, heavily damaging the Alfred P. Murrah Federal Building.</li>
+                <li>A total of 168 people were killed, including 19 children, and more than 500 people were injured.</li>
+                <li>This was the second most deadly terrorist assault on U.S. soil after the attacks on the World Trade Center.</li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Great Smoky Mountains</h3>
+            <ul>
+                <li>The Smokies are home to more than 4,0000 species of plants.</li>
+                <li>This is the most visited national park in the U.S.</li>
+                <li>The mountains are between 200 and 300 million years old.</li>
+                <li>The Cherokee called the area "Land of the Blue Smoke".</li>
+            </ul>
+        </div>
+
         <script src="js/jquery-2.2.4.js"></script>
         <script>
 
@@ -93,6 +134,21 @@
                     $(this).toggleClass('highlighted');
                 });
 
+                $('#button-two').click(function (e) {
+                    $('ul').each(function (e) {
+                        $(this).children().last().toggleClass('highlighted');
+                    });
+                });
+
+                $('h3').click(function (e) {
+                    $('ul').children().toggleClass('bolded');
+                });
+
+                $('li').click(function (e) {
+                    $('ul').each(function (e) {
+                        $(this).children().first().toggleClass('blue');
+                    });
+                });
             });
 
         </script>
